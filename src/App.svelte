@@ -7,7 +7,7 @@
 </style>
 
 <main>
-  <div class="bg-pattern w-lvw h-lvh"></div>
+  <div class="xxs:bg-center bg-pattern w-lvw h-lvh"></div>
   <Header />
   <Footer />
 </main>
