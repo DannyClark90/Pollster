@@ -1,13 +1,10 @@
 <script>
-
+  import Header from './components/Header.svelte'
 </script>
 
-<main>
-<h1>Pollster</h1>
-<h2>Pollster</h2>
-<p>Test font</p>
-</main>
-
 <style>
-
 </style>
+
+<main>
+  <Header />
+</main>
