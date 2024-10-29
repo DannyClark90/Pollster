@@ -1,6 +1,8 @@
 <script>
   import LogoWithFont from '../assets/Pollster Logo.png'
   import Logo from '../assets/icon.png'
+  import Fa from 'svelte-fa'
+  import { faBars, faTimes  } from '@fortawesome/free-solid-svg-icons'
 </script>
 
 <header
@@ -18,16 +20,20 @@
   </svg>
 
   <!-- Mobile Layout -->
-  <div class="md:hidden z-10 flex w-full h-full justify-between items-center">
+  <div class="md:hidden z-10 flex w-full h-full justify-between items-center px-5">
     <img
       class="h-[74%] w-auto z-10"
       src={LogoWithFont}
       alt="Polster Logo (green monster with white title below)"
     />
+
+    <Fa icon={faBars} class="text-white" size="2x"/>
   </div>
 
   <!-- Desktop Layout -->
-  <div class="xxs:hidden md:flex z-10 w-full h-auto flex justify-center gap-6 items-center">
+  <div
+    class="xxs:hidden md:flex z-10 w-full h-auto flex justify-center gap-6 items-center"
+  >
     <img
       class="h-[74%] w-auto z-10 mb-8"
       src={Logo}
