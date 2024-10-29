@@ -6,8 +6,8 @@
 <style>
 </style>
 
+<Header />
 <main>
   <div class="xxs:bg-center bg-pattern w-lvw h-lvh"></div>
-  <Header />
-  <Footer />
 </main>
+<Footer />

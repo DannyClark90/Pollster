@@ -37,8 +37,8 @@ export default {
         'sm-h2': '0.2rem',
       },
       backgroundImage: {
-        'pattern': "url('/src/assets/bg_img.svg')",
-      }
+        pattern: "url('/src/assets/bg_img.svg')",
+      },
     },
   },
   plugins: [],

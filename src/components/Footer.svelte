@@ -1,12 +1,14 @@
 <script>
-    import PollsIcon from "../assets/polls_icon.svg"
-    import AddPollIcon from "../assets/add_poll_icon.svg"
+  import PollsIcon from '../assets/polls_icon.svg'
+  import AddPollIcon from '../assets/add_poll_icon.svg'
 </script>
 
-<footer class="fixed bottom-0 left-0 flex items-center justify-center z-10 w-full xxs:h-[14%] xs:h-[15%] md:h-[14%]">
+<footer
+  class="fixed bottom-0 left-0 flex items-center justify-center z-10 w-full xxs:h-[14%] xs:h-[15%] md:h-[14%]"
+>
   <svg
     class="absolute w-full h-full"
-   viewBox="0 0 393 85"
+    viewBox="0 0 393 85"
     preserveAspectRatio="none"
   >
     <path
@@ -15,14 +17,16 @@
     />
   </svg>
 
-  <div class="xxs:w-[60%] lg:w-[30%] h-full flex items-center justify-between z-10 pt-10">
+  <div
+    class="xxs:w-[60%] lg:w-[30%] h-full flex items-center justify-between z-10 pt-10"
+  >
     <div class="h-fit w-fit flex flex-col gap-4">
-        <img src={PollsIcon} alt="White polls icon." class="h-14">
-        <h2 class="font-h2 text-sm-h2 tracking-sm-h2">Polls</h2>
+      <img src={PollsIcon} alt="White polls icon." class="h-14" />
+      <h2 class="font-h2 text-sm-h2 tracking-sm-h2">Polls</h2>
     </div>
     <div class="h-fit w-fit flex flex-col gap-4">
-        <img src={AddPollIcon} alt="White add poll icon." class="h-14">
-        <h2 class="font-h2 text-sm-h2 tracking-sm-h2">Add Poll</h2>
+      <img src={AddPollIcon} alt="White add poll icon." class="h-14" />
+      <h2 class="font-h2 text-sm-h2 tracking-sm-h2">Add Poll</h2>
     </div>
   </div>
 </footer>

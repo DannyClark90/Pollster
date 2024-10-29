@@ -16,18 +16,14 @@
     />
   </svg>
 
-  <div
-    class="z-10 w-full h-auto flex justify-center gap-6 items-center"
-  >
+  <div class="z-10 w-full h-auto flex justify-center gap-6 items-center">
     <img
       class="h-[74%] w-auto z-10 mb-8"
       src={Logo}
       alt="Pollster Logo (green monster)"
     />
 
-    <h1
-      class="md:h-fit font-h1 text-lg-h1 tracking-lg-h1 text-white size-fit"
-    >
+    <h1 class="md:h-fit font-h1 text-lg-h1 tracking-lg-h1 text-white size-fit">
       Pollster
     </h1>
   </div>
