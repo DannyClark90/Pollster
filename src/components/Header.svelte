@@ -1,12 +1,9 @@
 <script>
-  import LogoWithFont from '../assets/Pollster Logo.png'
   import Logo from '../assets/icon.png'
-  import Fa from 'svelte-fa'
-  import { faBars, faTimes  } from '@fortawesome/free-solid-svg-icons'
 </script>
 
 <header
-  class="fixed flex items-middle justify-start w-full xxs:h-[14%] xs:h-[15%] md:h-[14%] px-5 py-3 custom-clip top-0"
+  class="fixed flex items-middle justify-start w-full xxs:h-[14%] xs:h-[15%] md:h-[14%] px-5 py-3 top-0"
 >
   <svg
     class="absolute top-0 left-0 w-full h-full"
@@ -19,20 +16,8 @@
     />
   </svg>
 
-  <!-- Mobile Layout -->
-  <div class="md:hidden z-10 flex w-full h-full justify-between items-center px-5">
-    <img
-      class="h-[74%] w-auto z-10"
-      src={LogoWithFont}
-      alt="Polster Logo (green monster with white title below)"
-    />
-
-    <Fa icon={faBars} class="text-white" size="2x"/>
-  </div>
-
-  <!-- Desktop Layout -->
   <div
-    class="xxs:hidden md:flex z-10 w-full h-auto flex justify-center gap-6 items-center"
+    class="z-10 w-full h-auto flex justify-center gap-6 items-center"
   >
     <img
       class="h-[74%] w-auto z-10 mb-8"
@@ -41,7 +26,7 @@
     />
 
     <h1
-      class="xxs:hidden md:inline-block md:h-fit font-h1 text-lg-h1 tracking-lg-h1 text-white size-fit"
+      class="md:h-fit font-h1 text-lg-h1 tracking-lg-h1 text-white size-fit"
     >
       Pollster
     </h1>
