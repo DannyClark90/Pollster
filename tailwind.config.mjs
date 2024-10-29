@@ -26,13 +26,19 @@ export default {
       },
       fontSize: {
         'lg-h1': ['6rem', { lineHeight: '2.5rem', fontWeight: '700' }],
+        'sm-h2': ['2.4rem', { lineHeight: '2.5rem' }],
       },
       fontFamily: {
         h1: ['Bebas Neue', 'sans-serif'],
+        h2: ['Bebas Neue', 'sans-serif'],
       },
       letterSpacing: {
         'lg-h1': '0.5rem',
+        'sm-h2': '0.2rem',
       },
+      backgroundImage: {
+        'pattern': "url('/src/assets/bg_img.svg')",
+      }
     },
   },
   plugins: [],
