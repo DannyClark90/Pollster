@@ -6,14 +6,14 @@
   let currentPolls = [
     {
       title: "Favorite Fruit",
-      answerA: { answer: "Apple", votes: 40 },
-      answerB: { answer: "Banana", votes: 25 },
+      optionA: { option: "Apple", votes: 40 },
+      optionB: { option: "Banana", votes: 25 },
       totalVotes: 65
     },
     {
       title: "Favorite Fruit",
-      answerA: { answer: "Apple", votes: 40 },
-      answerB: { answer: "Banana", votes: 25 },
+      optionA: { option: "Apple", votes: 40 },
+      optionB: { option: "Banana", votes: 25 },
       totalVotes: 65
     }]
 </script>
