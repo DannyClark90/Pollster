@@ -8,9 +8,6 @@
       title: 'Favorite Fruit',
       optionA: { title: 'Apple', votes: 40 },
       optionB: { title: 'Banana', votes: 25 },
-      get totalVotes() {
-        return this.optionA.votes + this.optionB.votes
-      },
     },
   ]
 </script>

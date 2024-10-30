@@ -3,6 +3,8 @@
   import PollChart from './PollChart.svelte'
   import Button from './Button.svelte'
   export let poll
+
+  $: totalVotes = poll.optionA.votes + poll.optionB.votes; 
 </script>
 
 <article
@@ -10,7 +12,7 @@
 >
   <div class="flex flex-col items-start">
     <h2 class="font-h2 text-sm-h2 tracking-sm-h2">{poll.title}</h2>
-    <p>{`Total Votes: ${poll.totalVotes}`}</p>
+    <p>{`Total Votes: ${totalVotes}`}</p>
   </div>
 
   <PollChart {poll} />
