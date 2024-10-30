@@ -26,6 +26,7 @@ export default {
       },
       fontSize: {
         'lg-h1': ['6rem', { lineHeight: '2.5rem', fontWeight: '700' }],
+        'sm-h1': ['4rem', { lineHeight: '2.5rem', fontWeight: '700' }],
         'sm-h2': ['2.4rem', { lineHeight: '2.5rem' }],
       },
       fontFamily: {
