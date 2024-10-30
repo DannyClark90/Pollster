@@ -2,6 +2,7 @@
   import Header from './components/Header.svelte'
   import Footer from './components/Footer.svelte'
   import CurrentPolls from './components/CurrentPolls.svelte'
+    import AddPollForm from './components/AddPollForm.svelte'
 
   let activeTab = 'currentPolls'
 
@@ -15,7 +16,7 @@
   {#if activeTab === 'currentPolls'}
     <CurrentPolls />
   {:else if activeTab === 'addPoll'}
-    <p class="z-10">Add Polls</p>
+    <AddPollForm/>
   {/if}
 </main>
 <Footer on:changeTab={changeTab}/>
