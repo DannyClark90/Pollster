@@ -67,6 +67,7 @@
         class="rounded-lg drop-shadow-md h-16 pl-5"
         bind:value={formData.question}
       />
+      <p class="text-red-800">{errors.question}</p>
     </div>
 
     <div class="flex flex-col gap-1">
@@ -78,6 +79,7 @@
         class="rounded-lg drop-shadow-md h-16 pl-5"
         bind:value={formData.answerA}
       />
+      <p class="text-red-800">{errors.answerA}</p>
     </div>
 
     <div class="flex flex-col gap-1">
@@ -89,6 +91,7 @@
         class="rounded-lg drop-shadow-md h-16 pl-5"
         bind:value={formData.answerB}
       />
+      <p class="text-red-800">{errors.answerB}</p>
     </div>
 
     <div class="flex justify-center">
