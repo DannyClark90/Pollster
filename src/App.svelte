@@ -1,19 +1,21 @@
 <script>
-  import PollStore from './stores/PollStore'
   import Header from './components/Header.svelte'
   import Footer from './components/Footer.svelte'
-  import PollCard from './components/PollCard.svelte'
+  import CurrentPolls from './components/CurrentPolls.svelte'
+
+  let activeTab = 'currentPolls'
+
+  const changeTab = (e) => {
+    activeTab = e.detail
+  }
 </script>
 
 <Header />
 <main class="z-0 xxs:bg-center bg-pattern w-lvw h-lvh relative">
-  <div
-    class="absolute z-10 flex w-full flex-col items-center top-[18rem] gap-10"
-  >
-    <h1 class="font-h1 text-sm-h1 tracking-lg-h1">Current Polls</h1>
-    {#each $PollStore as poll, index (index)}
-      <PollCard {poll} id={index} />
-    {/each}
-  </div>
+  {#if activeTab === 'currentPolls'}
+    <CurrentPolls />
+  {:else if activeTab === 'addPoll'}
+    <p class="z-10">Add Polls</p>
+  {/if}
 </main>
-<Footer />
+<Footer on:changeTab={changeTab}/>
