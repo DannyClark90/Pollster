@@ -14,28 +14,12 @@
   
     const handleVote = (option) => {
       if (option === 'a') {
-        optionAVoted = !optionAVoted; // Toggle the voted state
-        if (optionAVoted) {
-          $PollStore[id].optionAVotes += 1; // Increment votes if newly voted
-          if (optionBVoted) {
-            optionBVoted = false; // Reset option B if option A is voted
-            $PollStore[id].optionBVotes -= 1; // Decrement votes for option B
-          }
-        } else {
-          $PollStore[id].optionAVotes -= 1; // Decrement if unvoted
-        }
+        optionAVoted = true; // Toggle the voted state
+        $PollStore[id].optionAVotes += 1; // Increment votes if newly voted
       }
       if (option === 'b') {
-        optionBVoted = !optionBVoted; // Toggle the voted state
-        if (optionBVoted) {
+        optionBVoted = true // Toggle the voted state
           $PollStore[id].optionBVotes += 1; // Increment votes if newly voted
-          if (optionAVoted) {
-            optionAVoted = false; // Reset option A if option B is voted
-            $PollStore[id].optionAVotes -= 1; // Decrement votes for option A
-          }
-        } else {
-          $PollStore[id].optionBVotes -= 1; // Decrement if unvoted
-        }
       }
     };
   </script>
