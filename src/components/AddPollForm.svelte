@@ -15,18 +15,31 @@
     answerB: '',
   }
 
-  let valid = false;
-
-  const validateForm = () => {
-    errors.question = formData.question.trim().length >= 5 ? '' : 'Question must be at least 5 characters long';
-    errors.answerA = formData.answerA.trim().length > 0 ? '' : 'Answer A must not be empty';
-    errors.answerB = formData.answerB.trim().length > 0 ? '' : 'Answer B must not be empty';
-    valid = !Object.values(errors).some(error => error.length > 0);
-  };
+  let valid = false
 
   const handleSubmit = () => {
-    // Check validation before proceeding
-    validateForm();
+    valid = true
+
+    if (formData.question.trim().length < 5) {
+      valid = false
+      errors.question = 'Question must be at least 5 characters long'
+    } else {
+      errors.question = ''
+    }
+
+    if (formData.answerA.trim().length < 1) {
+      valid = false
+      errors.answerA = 'Answer A must not be empty'
+    } else {
+      errors.answerA = ''
+    }
+    
+    if(formData.answerB.trim().length < 1 ){
+      valid = false
+      errors.answerB = 'Answer B must not be empty'
+    }else {
+      errors.answerB = ''
+    }
 
     if (valid) {
       let poll = {
@@ -36,16 +49,12 @@
         optionAVotes: 0,
         optionB: formData.answerB,
         optionBVotes: 0,
-      };
+      }
 
-      PollStore.update((polls) => [...polls, poll]);
-      formData = { question: '', answerA: '', answerB: '' }; // Clear form after submission
-      validateForm(); // Revalidate to reset error messages
+      PollStore.update((polls) => [...polls, poll])
+      formData = { question: '', answerA: '', answerB: '' } // Clear form after submission
     }
-  };
-
-  // Watch for changes in formData and validate
-  $: validateForm();
+  }
 </script>
 
 <!-- UI Layout with form validation feedback on input change -->
