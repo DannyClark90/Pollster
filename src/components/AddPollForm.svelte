@@ -15,42 +15,37 @@
     answerB: '',
   }
 
-  let valid = false
+  let valid = false;
 
-  const validateField = (field) => {
-    if (field === 'question') {
-      errors.question = formData.question.trim().length >= 5 ? '' : 'Question must be at least 5 characters long'
-    } else if (field === 'answerA') {
-      errors.answerA = formData.answerA.trim().length > 0 ? '' : 'Answer A must not be empty'
-    } else if (field === 'answerB') {
-      errors.answerB = formData.answerB.trim().length > 0 ? '' : 'Answer B must not be empty'
-    }
-  }
+  const validateForm = () => {
+    errors.question = formData.question.trim().length >= 5 ? '' : 'Question must be at least 5 characters long';
+    errors.answerA = formData.answerA.trim().length > 0 ? '' : 'Answer A must not be empty';
+    errors.answerB = formData.answerB.trim().length > 0 ? '' : 'Answer B must not be empty';
+    valid = !Object.values(errors).some(error => error.length > 0);
+  };
 
   const handleSubmit = () => {
-    // Re-validate all fields
-    validateField('question')
-    validateField('answerA')
-    validateField('answerB')
-
-    // Check if there are any errors
-    valid = !Object.values(errors).some(error => error.length > 0)
+    // Check validation before proceeding
+    validateForm();
 
     if (valid) {
       let poll = {
         id: uuidv4(),
         title: formData.question,
-        optionA: { title: formData.answerA, votes: 0 },
-        optionB: { title: formData.answerB, votes: 0 },
-        totalVotes() {
-          return this.optionA.votes + this.optionB.votes
-        },
-      }
+        optionA: formData.answerA,
+        optionAVotes: 0,
+        optionB: formData.answerB,
+        optionBVotes: 0,
+      };
 
-      PollStore.update((polls) => [...polls, poll])
-      formData = { question: '', answerA: '', answerB: '' } // Clear form after submission
+      PollStore.update((polls) => [...polls, poll]);
+      formData = { question: '', answerA: '', answerB: '' }; // Clear form after submission
+      validateForm(); // Revalidate to reset error messages
     }
-  }
+  };
+
+  // Watch for changes in formData and validate
+  $: validateForm();
 </script>
 
 <!-- UI Layout with form validation feedback on input change -->
@@ -65,10 +60,9 @@
       <input
         id="question"
         type="text"
-        placeholder="enter question..."
+        placeholder="Enter question..."
         class="rounded-lg drop-shadow-md h-16 pl-5"
         bind:value={formData.question}
-        on:input={() => validateField('question')}
       />
       <p class="text-red-800">{errors.question}</p>
     </div>
@@ -78,10 +72,9 @@
       <input
         id="optionA"
         type="text"
-        placeholder="enter option A..."
+        placeholder="Enter option A..."
         class="rounded-lg drop-shadow-md h-16 pl-5"
         bind:value={formData.answerA}
-        on:input={() => validateField('answerA')}
       />
       <p class="text-red-800">{errors.answerA}</p>
     </div>
@@ -91,10 +84,9 @@
       <input
         id="optionB"
         type="text"
-        placeholder="enter option B..."
+        placeholder="Enter option B..."
         class="rounded-lg drop-shadow-md h-16 pl-5"
         bind:value={formData.answerB}
-        on:input={() => validateField('answerB')}
       />
       <p class="text-red-800">{errors.answerB}</p>
     </div>
