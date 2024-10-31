@@ -1,7 +1,7 @@
 <script>
   import PollsIcon from '../assets/polls_icon.svg'
   import AddPollIcon from '../assets/add_poll_icon.svg'
-    import { createEventDispatcher } from 'svelte'
+  import { createEventDispatcher } from 'svelte'
   const dispatch = createEventDispatcher()
 </script>
 
@@ -22,11 +22,17 @@
   <div
     class="xxs:w-[60%] lg:w-[30%] h-[70%] flex items-center justify-between z-10"
   >
-    <div class="h-full w-[40%] flex flex-col justify-center gap-4"on:click={() => dispatch('changeTab', 'currentPolls' )}>
+    <div
+      class="h-full w-[40%] flex flex-col justify-center gap-4 cursor-pointer"
+      on:click={() => dispatch('changeTab', 'currentPolls')}
+    >
       <img src={PollsIcon} alt="White polls icon." class="h-14" />
       <h2 class="font-h2 text-sm-h2 tracking-sm-h2 text-center">Polls</h2>
     </div>
-    <div class="h-full w-[40%] flex flex-col justify-center gap-4" on:click={() => dispatch('changeTab', 'addPoll')}>
+    <div
+      class="h-full w-[40%] flex flex-col justify-center gap-4 cursor-pointer"
+      on:click={() => dispatch('changeTab', 'addPoll')}
+    >
       <img src={AddPollIcon} alt="White add poll icon." class="h-14" />
       <h2 class="font-h2 text-sm-h2 tracking-sm-h2 text-center">Add Poll</h2>
     </div>
