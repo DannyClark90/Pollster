@@ -3,7 +3,7 @@
 </script>
 
 <header
-  class="z-10 fixed flex items-middle justify-start w-full xxs:h-[14%] xs:h-[15%] md:h-[14%] px-5 py-3 top-0"
+  class="z-20 fixed flex items-middle justify-start w-full xxs:h-[14%] xs:h-[15%] md:h-[14%] px-5 py-3 top-0"
 >
   <svg
     class="absolute top-0 left-0 w-full h-full"

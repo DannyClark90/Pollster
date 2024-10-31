@@ -12,7 +12,7 @@
 </script>
 
 <Header />
-<main class="z-0 xxs:bg-center bg-pattern w-lvw h-lvh relative">
+<main class="z-0 xxs:bg-center bg-pattern w-lvw h-lvh bg-fixed">
   {#if activeTab === 'currentPolls'}
     <CurrentPolls />
   {:else if activeTab === 'addPoll'}
